@@ -10,16 +10,17 @@ Friendly is a social network for the masses built on
 - Password Reset
 - 2FA (time permitting)
 
+## Profile
+
+- About
+- Friends
+
 ## Friends
 
 - Friends requests
 - Accept requests
 - Deny requests
 
-## Profile
-
-- About
-- Friends
 
 ## News Feed
 
