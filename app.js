@@ -1,3 +1,4 @@
+var fs           = require('fs');
 var express      = require('express');
 var path         = require('path');
 var logger       = require('morgan');
@@ -6,7 +7,7 @@ var bodyParser   = require('body-parser');
 var expressHbs   = require('express-handlebars');
 
 // Environment configuration
-if (process.env.NODE_ENV === 'development')
+if (fs.existsSync('.env'))
 {
   require('dotenv').load();
 }
@@ -39,7 +40,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var Pages = require('./app/Pages');
+var Pages = require('./app/pages');
+var User  = require('./app/user');
 
 app.route('/').get(Pages.index);
 
