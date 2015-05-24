@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var expressHbs   = require('express-handlebars');
 
+var Pages = require('./lib/pages');
+var User  = require('./lib/user');
+
 // Environment configuration
 if (fs.existsSync('.env'))
 {
@@ -39,9 +42,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-var Pages = require('./app/pages');
-var User  = require('./app/user');
 
 app.route('/').get(Pages.index);
 

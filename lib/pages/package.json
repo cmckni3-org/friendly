@@ -1,0 +1,10 @@
+{
+  "name": "pages",
+  "version": "0.1.0",
+  "description": "Pages module for friendly",
+  "main": "index.js",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+  }
+}
