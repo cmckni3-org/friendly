@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var expressHbs   = require('express-handlebars');
 
+require('app-module-path').addPath(__dirname + '/app');
+
 var Pages = require('./lib/pages');
 var User  = require('./lib/user');
 
@@ -44,6 +46,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.route('/').get(Pages.index);
+app.route('/users').get(User.index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
